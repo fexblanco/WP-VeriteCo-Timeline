@@ -356,9 +356,15 @@
 			while ( $loop->have_posts() ) :
 				$loop->the_post();
 				$entry = new wpvtEntry( $post );
-				
+
+				/*
+				Acent dont display fix
+				http://wordpress.org/support/topic/accent-don-t-display-1
 				$string .= stripslashes($entry->toJSON());
-				
+				*/
+
+				$string .= $entry->toJSON();
+
 				if($loop->current_post < $loop->post_count - 1) {
 					$string .= ',';
 				}
