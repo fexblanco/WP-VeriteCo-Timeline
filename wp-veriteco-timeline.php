@@ -349,9 +349,9 @@
 			';
 			
 			// TODO: APPEND DATE ENTRIES
-			$args = array( 'post_type' => 'timeline' );
+			$args = array( 'post_type' => 'timeline', 'posts_per_page' => -1 );
 			$loop = new WP_Query( $args );
-			$last = ($loop->post_count <= get_option('posts_per_page')) ? $loop->post_count : get_option('posts_per_page');
+			//$last = ($loop->post_count <= get_option('posts_per_page')) ? $loop->post_count : get_option('posts_per_page');
 			
 			while ( $loop->have_posts() ) :
 				$loop->the_post();
